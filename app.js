@@ -1,7 +1,10 @@
 (function()
 {
   angular.module("LunchCheck",[])
-  .controller("LunchCheckController",function($scope)
+  .controller("LunchCheckController",DIController);
+  
+  DIController.$inject = ['$scope'];
+  function DIController($scope)
   {
       $scope.menuList = "";
       $scope.message = "";
@@ -33,7 +36,7 @@
         }
       }
 
-  });  
+  }  
 
   function checkEmpty(my_arr){
     for(var i=0;i<my_arr.length;i++){
